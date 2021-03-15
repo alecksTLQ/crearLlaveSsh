@@ -1,0 +1,41 @@
+configurar repositorio
+
+//ver configuracion
+git config -l
+
+//agregar o cambiar correo
+git config --global user.email "correo"
+
+
+CREAR LLAVE DE SSH
+
+//1
+ssh-keygen -t rsa -b 4096 -C "correoelectronicodegithub"
+
+//2 pedira introducir un pasword
+
+
+COMPROBAR FUNCIONAMIENTO
+
+eval $(ssh-agent -s)
+
+resultado: agent pid + numerorandom
+
+
+
+AGREGAR LA LLAVE
+ssh-add ~/.ssh/id_rsa
+
+
+
+CONECTAR A GIT HUB
+
+se agrega la llave publica al perfil de github
+en settings
+
+ - agegar el origin al repositorio
+	git branch -M main //cambia el nombre del branch a main
+	git remote add origin "direcciondelrepositorio.git" //agrega el origen remoto
+	
+ - si ya tiene un origen y se quiere cambiar
+	git remote set-url origin "direcciondelrepositorio.git"
